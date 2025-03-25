@@ -1,0 +1,94 @@
+.builder-prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.builder-prompt-card {
+  background-color: var(--background-color, white);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.builder-prompt-card h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.builder-features {
+  margin: 1.5rem 0;
+}
+
+.builder-features p {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.builder-features ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.builder-features li {
+  margin: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.builder-features li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+.builder-prompt-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.builder-prompt-actions a {
+  flex: 1;
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.signup-button {
+  background-color: var(--primary-color, #0d47a1);
+  color: white;
+}
+
+.signup-button:hover {
+  background-color: var(--primary-color-dark, #0a3780);
+}
+
+.login-button {
+  background-color: var(--primary-color, #0d47a1);
+  color: white;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .builder-prompt-card {
+    background-color: var(--background-color-dark, #2a2a2a);
+  }
+}

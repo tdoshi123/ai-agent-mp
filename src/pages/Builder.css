@@ -1,0 +1,367 @@
+.builder {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.builder-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.builder-header h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+.search-container {
+  width: 300px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.requests-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.request-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.request-card:hover {
+  transform: translateY(-2px);
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.request-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.status-badge {
+  background: var(--badge-bg, #e9ecef);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+.request-description {
+  color: var(--text-secondary, #666);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.request-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.request-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #666);
+}
+
+.accept-button {
+  background: var(--primary-color, #007bff);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accept-button:hover {
+  background: var(--primary-color-dark, #0056b3);
+}
+
+.loading, .error, .no-requests {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary, #666);
+}
+
+.error {
+  color: var(--error-color, #dc3545);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .request-card {
+    --card-bg: #2a2a2a;
+    --border-color: #404040;
+  }
+
+  .status-badge {
+    --badge-bg: #404040;
+  }
+}
+
+/* Add these styles to your existing Builder.css */
+
+.request-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--card-bg, #fff);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #ffffff !important; /* Force white color with !important */
+}
+
+.form-group input,
+.form-group textarea,
+.tools-input-container input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Light mode */
+body.light-mode .form-group input,
+body.light-mode .form-group textarea,
+body.light-mode .tools-input-container input {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode */
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .tools-input-container input {
+  background-color: var(--input-bg-dark, #333);
+  color: #ffffff;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 4px;
+  font-size: 1rem;
+  min-height: 150px;
+  resize: vertical;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .request-form {
+    --card-bg: #2a2a2a;
+    --border-color: #404040;
+  }
+
+  .form-group label {
+    color: #ffffff;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .tools-input-container input {
+    background-color: var(--input-bg-dark, #333);
+    border-color: var(--border-color-dark, #444);
+    color: #ffffff;
+  }
+}
+
+/* Also add class-based dark mode support */
+body.dark-mode .form-group label {
+  color: #ffffff;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .tools-input-container input {
+  background-color: var(--input-bg-dark, #333);
+  border-color: var(--border-color-dark, #444);
+  color: #ffffff;
+}
+
+.tools-input-container {
+  margin-bottom: 0.5rem;
+}
+
+.tools-input-container input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .tools-input-container input {
+    background-color: var(--input-bg-dark, #333);
+    border-color: var(--border-color-dark, #444);
+    color: #ffffff;
+  }
+}
+
+body.dark-mode .tools-input-container input {
+  background-color: var(--input-bg-dark, #333);
+  border-color: var(--border-color-dark, #444);
+  color: #ffffff;
+}
+
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tool-tag {
+  background-color: var(--primary-color, #0d47a1);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remove-tool {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-tool:hover {
+  opacity: 0.8;
+}
+
+input[type="range"] {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: var(--primary-color, #0d47a1);
+  border: none;
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--primary-color, #0d47a1);
+  margin-top: -6px;
+  cursor: pointer;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  background: var(--primary-color, #0d47a1);
+  border: none;
+  border-radius: 2px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--primary-color, #0d47a1);
+  cursor: pointer;
+  border: none;
+}
+
+.submit-button {
+  background: var(--primary-color, #007bff);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background: var(--primary-color-dark, #0056b3);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .request-form {
+    --card-bg: #2a2a2a;
+    --border-color: #404040;
+  }
+
+  .form-group textarea,
+  .tools-input-container input {
+    background-color: var(--input-bg-dark, #333);
+    border-color: var(--border-color-dark, #444);
+    color: #ffffff;
+  }
+}
+
+/* Also add class-based dark mode support */
+body.dark-mode .form-group textarea,
+body.dark-mode .tools-input-container input {
+  background-color: var(--input-bg-dark, #333);
+  border-color: var(--border-color-dark, #444);
+  color: #ffffff;
+}

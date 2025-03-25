@@ -1,0 +1,210 @@
+.agent-details {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.agent-details-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agent-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.agent-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.agent-emoji {
+  font-size: 3rem;
+}
+
+.agent-header h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.buy-button {
+  background-color: #0d47a1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.buy-button:hover {
+  background-color: #0a3780;
+}
+
+.agent-info {
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.seller {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.seller-name {
+  color: #0d47a1;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.tag {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.dot {
+  color: #666;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star {
+  color: #ffc107;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-block;
+}
+
+.star.empty {
+  color: #e0e0e0;
+}
+
+.star.half {
+  position: relative;
+  display: inline-block;
+  width: 1.1rem;  /* Match the font-size of other stars */
+  height: 1.1rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.star.half:before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: #ffc107;
+  width: 50%;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.star.half:after {
+  content: '☆';
+  position: absolute;
+  left: 0;
+  color: #e0e0e0;
+  line-height: 1;
+}
+
+/* Dark mode style for half stars */
+body.dark-mode .star.half:after {
+  color: #444;
+}
+
+.rating-number {
+  color: #666;
+  margin-left: 0.25rem;
+}
+
+/* Dark mode styles */
+body.dark-mode .agent-details-container {
+  background-color: #2a2a2a;
+  color: white;
+}
+
+body.dark-mode .agent-info {
+  border-top-color: #444;
+}
+
+body.dark-mode .seller {
+  color: #aaa;
+}
+
+body.dark-mode .seller-name {
+  color: #5c92ff;
+}
+
+body.dark-mode .description {
+  color: #ddd;
+}
+
+body.dark-mode .buy-button {
+  background-color: #5c92ff;
+}
+
+body.dark-mode .buy-button:hover {
+  background-color: #4a75cc;
+}
+
+body.dark-mode .tag {
+  background-color: #1a365d;
+  color: #5c92ff;
+}
+
+body.dark-mode .stats {
+  color: #aaa;
+}
+
+body.dark-mode .dot {
+  color: #aaa;
+}
+
+body.dark-mode .star.empty {
+  color: #444;
+}
+
+body.dark-mode .star.half:after {
+  color: #444;
+}
+
+body.dark-mode .rating-number {
+  color: #aaa;
+}
