@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { database } from '../firebase';
+import { useState, useEffect } from 'react';
+import { database } from '../config/firebase';
 import { ref, get, query, orderByChild, equalTo } from 'firebase/database';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../context/auth/AuthContext';
 import './MyRequests.css';
 
 function MyRequests() {
