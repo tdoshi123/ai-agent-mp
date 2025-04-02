@@ -89,25 +89,23 @@ function Builder() {
         title: formData.title.trim(),
         description: formData.description.trim(),
         budget: Number(formData.budget),
-        tools: tools, // Add the tools array
+        tools: tools,
         status: 'open',
         requesterName: user.displayName,
         requesterId: user.uid,
+        requesterEmail: user.email,
         createdAt: new Date().toISOString()
       };
       
       const requestsRef = ref(database, 'requests');
       await push(requestsRef, requestData);
 
-      // Clear form and tools
       setFormData({
         title: '',
         description: '',
         budget: ''
       });
-      setTools([]); // Clear tools array after successful submission
-
-      // Show success message
+      setTools([]);
       alert('Request submitted successfully!');
     } catch (err) {
       console.error('Error submitting request:', err);
@@ -269,6 +267,9 @@ function Builder() {
                 <div className="request-footer">
                   <div className="request-meta">
                     <span>Posted by: {request.requesterName}</span>
+                    {request.status === 'in_progress' && (
+                      <span>Contact: {request.requesterEmail}</span>
+                    )}
                     <span>Budget: ${request.budget}</span>
                   </div>
                   <button 

@@ -10,6 +10,12 @@ function MyRequests() {
   const [error, setError] = useState('');
   const { user } = useAuth();
 
+  const formatStatus = (status) => {
+    return status.split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
   useEffect(() => {
     const fetchRequests = async () => {
       try {
@@ -59,16 +65,20 @@ function MyRequests() {
               <div className="request-header">
                 <h3>{request.title}</h3>
                 <span className={`status-badge ${request.status}`}>
-                  {request.status}
+                  {formatStatus(request.status)}
                 </span>
               </div>
               <p className="request-description">{request.description}</p>
               <div className="request-footer">
                 <div className="request-meta">
+                  <span>Posted by: {request.requesterName}</span>
                   <span>Budget: ${request.budget}</span>
                   <span>Created: {new Date(request.createdAt).toLocaleDateString()}</span>
-                  {request.builderId && (
-                    <span>Builder: {request.builderName}</span>
+                  {request.status === 'in_progress' && (
+                    <>
+                      <span>Builder: {request.builderName}</span>
+                      <span>Contact: {request.requesterEmail}</span>
+                    </>
                   )}
                 </div>
               </div>

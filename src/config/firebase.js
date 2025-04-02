@@ -24,7 +24,7 @@ setPersistence(auth, browserLocalPersistence)
   });
 
 // Monitor connection state
-const connectedRef = ref(database, '.info/connected');
+const connectedRef = ref(database, 'info/connected');
 onValue(connectedRef, (snap) => {
   if (snap.val() === true) {
     console.log('Connected to Firebase');

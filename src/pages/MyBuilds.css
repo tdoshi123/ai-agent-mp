@@ -1,0 +1,111 @@
+.my-builds {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.my-builds h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.builds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.build-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.build-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.build-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.build-description {
+  color: var(--text-secondary, #666);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.build-tools {
+  margin: 1rem 0;
+}
+
+.build-tools h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tool-tag {
+  background: var(--tag-bg, #e9ecef);
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.875rem;
+}
+
+.build-footer {
+  margin-top: 1.5rem;
+}
+
+.build-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #666);
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  background-color: #007bff;
+  color: white;
+}
+
+.status-badge.in_progress {
+  background-color: #007bff;
+}
+
+.loading, .error, .no-builds {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary, #666);
+}
+
+.error {
+  color: var(--error-color, #dc3545);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .build-card {
+    --card-bg: #2a2a2a;
+    --border-color: #404040;
+  }
+
+  .tool-tag {
+    --tag-bg: #404040;
+    color: #fff;
+  }
+}
